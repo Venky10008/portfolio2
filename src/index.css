@@ -107,6 +107,48 @@ body {
    animation: shine 1.5s ease-in-out infinite;
  }
 
+ /* Custom animations from components */
+ @keyframes float {
+   0%, 100% { 
+     transform: translateY(0); 
+   }
+   50% { 
+     transform: translateY(-20px); 
+   }
+ }
+
+ @keyframes spin-slower {
+   to { 
+     transform: rotate(360deg); 
+   }
+ }
+
+ @keyframes blink {
+   0%, 100% { 
+     opacity: 1; 
+   }
+   50% { 
+     opacity: 0; 
+   }
+ }
+
+ .animate-float {
+   animation: float 6s ease-in-out infinite;
+ }
+
+ .animate-pulse-slow {
+   animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+ }
+
+ .animate-spin-slower {
+   animation: spin-slower 8s linear infinite;
+ }
+
+ .animate-blink {
+   animation: blink 1s ease-in-out infinite;
+ }
+
+
   
 /*   @media (prefers-color-scheme: dark) {
 	::-webkit-scrollbar-track {

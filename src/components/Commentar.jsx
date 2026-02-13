@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from 'react';
+import { useEffect, memo } from 'react';
 import { MessageCircle, UserCircle2 } from 'lucide-react';
 import AOS from "aos";
 import "aos/dist/aos.css";
