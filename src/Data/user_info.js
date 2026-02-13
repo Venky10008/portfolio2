@@ -2,7 +2,7 @@ const UserInfo = {
     name: "Pola Venkatesh",
     role: "AI & ML Engineer",
     shortDescription: "Aspiring AI & ML Engineer passionate about building innovative solutions. Experienced in Application Development, Web Development, and Generative AI.",
-    bio: "B.Tech 3rd-year Computer Science student specializing in Artificial Intelligence and Machine Learning. Hands-on exposure to application development, web development, and AI-assisted solutions through academic workshops and self-driven projects. Strong interest in software development, testing, and cybersecurity with solid problem-solving and leadership skills.",
+    bio: "B.Tech 3rd-year Computer Science student specializing in Artificial Intelligence and Machine Learning, with hands-on experience in application and web development through workshops and self-driven projects. Interested in software development, testing, and cybersecurity, with strong problem-solving and leadership skills.",
     location: "Khammam, Telangana, India",
     email: "anonymous23636@gmail.com",
     phone: "9866342962",
@@ -17,8 +17,6 @@ const UserInfo = {
         "FlutterFlow",
         "AI Fundamentals",
         "Generative AI",
-        "GitHub",
-        "Software Testing",
         "Problem Solving",
         "Leadership",
         "Research Skills"
@@ -53,15 +51,23 @@ const UserInfo = {
         },
         {
             id: 2,
-            Img: "2.png"
+            Img: "/2.png"
         },
         {
             id: 3,
-            Img: "3.png"
+            Img: "/3.png"
         },
         {
             id: 4,
-            Img: "https://placehold.co/400x300?text=AI+Tools+Workshop"
+            Img: "/4.jpg"
+        },
+        {
+            id: 5,
+            Img: "/5.png"
+        },
+        {
+            id: 6,
+            Img: "/6.png"
         }
     ]
 };
