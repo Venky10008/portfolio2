@@ -28,7 +28,7 @@ const Comment = memo(({ comment }) => (
     </div>
 ));
 
-const Komentar = () => {
+const Comments = () => {
     useEffect(() => {
         AOS.init({
             once: false,
@@ -90,4 +90,4 @@ const Komentar = () => {
     );
 };
 
-export default Komentar;
+export default Comments;

@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { Share2, User, Mail, MessageSquare, Send } from "lucide-react";
 import { Link } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
-import Komentar from "../components/Commentar";
+import Comments from "../components/Comments";
 import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 import UserInfo from "../Data/user_info";
+import { db } from "../firebase";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -36,8 +38,8 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     Swal.fire({
-      title: 'Mengirim Pesan...',
-      html: 'Harap tunggu selagi kami mengirim pesan Anda',
+      title: 'Sending Message...',
+      text: 'Please wait while we send your message',
       allowOutsideClick: false,
       didOpen: () => {
         Swal.showLoading();
@@ -45,29 +47,16 @@ const ContactPage = () => {
     });
 
     try {
-      // Ganti dengan email Anda di FormSubmit
-      // Ganti dengan email Anda di FormSubmit
-      const formSubmitUrl = `https://formsubmit.co/${UserInfo.email}`;
-
-      // Siapkan data form untuk FormSubmit
-      const submitData = new FormData();
-      submitData.append('name', formData.name);
-      submitData.append('email', formData.email);
-      submitData.append('message', formData.message);
-      submitData.append('_subject', 'Pesan Baru dari Website Portfolio');
-      submitData.append('_captcha', 'false'); // Nonaktifkan captcha
-      submitData.append('_template', 'table'); // Format email sebagai tabel
-
-      await axios.post(formSubmitUrl, submitData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+      await addDoc(collection(db, "messages"), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        timestamp: serverTimestamp(),
       });
 
-
       Swal.fire({
-        title: 'Berhasil!',
-        text: 'Pesan Anda telah berhasil terkirim!',
+        title: 'Success!',
+        text: 'Your message has been sent successfully!',
         icon: 'success',
         confirmButtonColor: '#6366f1',
         timer: 2000,
@@ -81,29 +70,13 @@ const ContactPage = () => {
       });
 
     } catch (error) {
-      if (error.request && error.request.status === 0) {
-        Swal.fire({
-          title: 'Berhasil!',
-          text: 'Pesan Anda telah berhasil terkirim!',
-          icon: 'success',
-          confirmButtonColor: '#6366f1',
-          timer: 2000,
-          timerProgressBar: true
-        });
-
-        setFormData({
-          name: "",
-          email: "",
-          message: "",
-        });
-      } else {
-        Swal.fire({
-          title: 'Gagal!',
-          text: 'Terjadi kesalahan. Silakan coba lagi nanti.',
-          icon: 'error',
-          confirmButtonColor: '#6366f1'
-        });
-      }
+      console.error("Error sending message:", error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Something went wrong. Please try again later.',
+        icon: 'error',
+        confirmButtonColor: '#6366f1'
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -232,7 +205,7 @@ const ContactPage = () => {
           </div>
 
           <div className="  bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-500 hover:shadow-[#6366f1]/10">
-            <Komentar />
+            <Comments />
           </div>
         </div>
       </div>

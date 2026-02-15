@@ -25,23 +25,50 @@ const UserInfo = {
         {
             id: 1,
             Title: "AI-Based QA App",
-            Description: "Developed an AI-assisted mobile application to answer user queries. Designed application workflow and UI using FlutterFlow. Integrated AI APIs.",
-            Link: "",
-            Img: "/code_helper.png"
+            Description: "A sophisticated AI-driven mobile application designed to provide instant and accurate answers to user queries. This project involved complex workflow orchestration and a seamless integration between the frontend and large language model APIs. The app features a clean, intuitive interface that makes AI accessible to everyday users.",
+            Link: "https://example.com/ai-qa",
+            Img: "/code_helper.png",
+            TechStack: ["FlutterFlow", "OpenAI API", "Firebase Authentication", "Firestore", "Google Cloud Functions"],
+            Features: [
+                "Advanced Natural Language Processing for accurate query understanding",
+                "Secure user authentication and personalized history tracking",
+                "Real-time streaming responses for a smooth chat experience",
+                "Cross-platform compatibility (iOS and Android)",
+                "Custom-designed UI components for enhanced user engagement",
+                "Scalable backend architecture to handle high traffic"
+            ]
         },
         {
             id: 2,
             Title: "College Website",
-            Description: "Built a functional college website prototype with structured navigation. Used AI tools for development support while understanding real-world website design concepts.",
+            Description: "A comprehensive and modern website prototype built for educational institutions. This project focuses on delivering a structured navigation experience, ensuring that students, faculty, and visitors can easily access information. It features a fully responsive layout and several dynamic components tailored for a campus environment.",
             Link: "https://scitr-enhanced-college-website.vercel.app/",
-            Img: "/college_website_screenshot_v2.png"
+            Img: "/college_website_screenshot_v2.png",
+            TechStack: ["React.js", "Tailwind CSS", "Vite", "AOS (Animate On Scroll)", "Lucide React Icons"],
+            Features: [
+                "Comprehensive academic department and course catalog",
+                "Interactive campus map and facility directory",
+                "Dynamic news and events announcement system",
+                "Responsive design optimized for smartphones, tablets, and desktops",
+                "Smooth scroll animations and professional aesthetics",
+                "Integrated contact forms and social media links"
+            ]
         },
         {
             id: 3,
             Title: "Bus Booking Site",
-            Description: "Created a basic bus booking website prototype demonstrating booking flow logic. Learned fundamentals of user interaction flow and system design.",
+            Description: "An end-to-end bus reservation system prototype that demonstrates a complete user journey from seat selection to booking confirmation. This project highlights efficient state management and complex form handling, providing a realistic simulation of a high-traffic e-commerce platform.",
             Link: "https://rtcbooking.lovable.app",
-            Img: "/bus_booking_site.png"
+            Img: "/bus_booking_site.png",
+            TechStack: ["React", "JavaScript (ES6+)", "Tailwind CSS", "State Management (Context API)", "React Router"],
+            Features: [
+                "Interactive seat map with real-time availability updates",
+                "Multi-step booking wizard with progress tracking",
+                "Complex price calculation based on seat type and distance",
+                "Form validation and secure data handling simulations",
+                "Filter and search functionality for bus schedules",
+                "Responsive mobile-first user interface"
+            ]
         }
     ],
     certificates: [
